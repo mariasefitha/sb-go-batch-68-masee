@@ -2,7 +2,7 @@ package main
 
 import (
 	//SOAL 5 mohon maaf mas, saya gak ngerti gimana caranya, udah coba cari-cari tp gak ngerti dan gak bisa
-	//"Users/LENOVO/sb-go-batch-68-mase/Pekan_v1/sb-go-batch-68-masee/Pekan_2/formative-8/matematika"
+
 	"fmt"
 	"math"
 )
@@ -104,6 +104,14 @@ func main() {
 	// hasilKali := matematika.Kali(a, b)
 	// fmt.Println("Hasil Tambah:", hasilTambah) // Output: 8
 	// fmt.Println("Hasil Kali:", hasilKali)     // Output: 15
+
+	//SOAL LIVE SESSION
+	nums := []int{2, 7, 11, 15}
+	target := 22
+
+	result := penjumlahan(nums, target)
+	fmt.Println("\n")
+	fmt.Println(result)
 }
 
 // FUNCTION
@@ -151,4 +159,17 @@ func luasPersegi(sisi int, hasil bool) interface{} { //interface kosong
 	} else {
 		return sisi * sisi
 	}
+}
+
+// SOAL LIVE SESSION
+func penjumlahan(nums []int, target int) []int {
+	//your code here
+	for i := 0; i <= len(nums); i++ {
+		for j := i + 1; j < len(nums); j++ {
+			if nums[i]+nums[j] == target {
+				return []int{i, j}
+			}
+		}
+	}
+	return nil
 }
